@@ -112,7 +112,7 @@ int main(int argc, char **argv)
 {
   if (argc != 2)
   {
-    cout << "Usage: " << argv[0] << " FILE" << endl;
+    cout << "Usage: " << argv[0] << " [FILE]" << endl;
     return (EXIT_FAILURE);
   }
   if (checkMissingValue(argv[1]) == EXIT_FAILURE)
