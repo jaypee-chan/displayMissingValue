@@ -1,4 +1,3 @@
-
 #include <unistd.h>
 #include <iostream>
 #include <cstdio>
@@ -15,10 +14,7 @@ void revint(int *str, int len)
   while (i < 8)
     str[i++] = 0;
   while (i > 0)
-  {
-    --i;
-    cout << str[i];
-  }
+    cout << str[--i];
   cout << endl;
 }
 
@@ -29,8 +25,7 @@ void displayBytes(int bytes)
 
   while (bytes > 0)
   {
-    bytestr[i] = bytes % 2;
-    ++i;
+    bytestr[i++] = bytes % 2;
     bytes /= 2;
   }
   revint(bytestr, i);
@@ -49,6 +44,7 @@ size_t checkMaxValue(FILE *file)
   fseek(file, 0, SEEK_SET);
   return (maxVal);
 }
+
 void stockBytes(char *buff, char *bitsvector)
 {
   char value = 0;
@@ -63,11 +59,11 @@ void stockBytes(char *buff, char *bitsvector)
 
 void displayMissingValueInBinary(char *bitsvector, size_t maxVal)
 {
-for (int i = 0; i < (maxVal / 8 + 1); ++i)
-{
-  cout << "CASE[" << i << "] = ";
-  displayBytes(bitsvector[i]);
-}
+  for (int i = 0; i < (maxVal / 8 + 1); ++i)
+  {
+    cout << "CASE[" << i << "] = ";
+    displayBytes(bitsvector[i]);
+  }
 }
 
 void displayMissingValue(char *bitsvector, size_t maxVal)
@@ -104,6 +100,7 @@ int checkMissingValue(char const * filename)
   }
   while (fgets(buff, BUFF_SIZE, file))
     stockBytes(buff, bitsvector);
+  cout << "FROM 0 TO " << maxVal << endl;
   displayMissingValue(bitsvector, maxVal);
   return (EXIT_SUCCESS);
 }
