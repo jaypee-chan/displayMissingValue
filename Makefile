@@ -1,8 +1,8 @@
-SRC	=	displayMissingValue.cpp
+SRC	=	displayMissingValue.c
 
-OBJ	=	$(SRC:.cpp=.o)
+OBJ	=	$(SRC:.c=.o)
 
-GCC	=	g++ -o
+GCC	=	gcc -o
 
 RM	=	rm -f
 
