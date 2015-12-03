@@ -1,5 +1,5 @@
 # displayMissingValue
 
-A little program in C++ (with binary shift) that displays the missing values.
+A little program in C that displays missing positive values.
 
 Usage: ./displayMissingValue [FILE]
